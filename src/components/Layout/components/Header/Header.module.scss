@@ -111,37 +111,45 @@
   justify-content: center;
 }
 
-.upload-btn {
-  height: 100%;
-  border: 1px solid rgba(22, 24, 35, 0.06);
-  background: none;
-  cursor: pointer;
-  font-size: 1.8rem;
-  font-weight: 500;
-  padding: 0 16px;
-
-  .fa-plus {
-    margin-right: 8px;
-  }
-
-  &:hover {
-    background-color: rgba(22, 24, 35, 0.03);
-  }
-}
-
-.inbox-btn {
+.more-btn {
   cursor: pointer;
   height: 100%;
   background: none;
   font-size: 2rem;
+  margin-left: 24px;
 }
 
-.setting-list-btn {
-  content: "H";
-  cursor: pointer;
-  width: 32px;
-  height: 32px;
-  border: 1px solid transparent;
-  background-color: burlywood;
-  border-radius: 50%;
-}
+// .upload-btn {
+//   height: 100%;
+//   border: 1px solid rgba(22, 24, 35, 0.06);
+//   background: none;
+//   cursor: pointer;
+//   font-size: 1.8rem;
+//   font-weight: 500;
+//   padding: 0 16px;
+
+//   .fa-plus {
+//     margin-right: 8px;
+//   }
+
+//   &:hover {
+//     background-color: rgba(22, 24, 35, 0.03);
+//   }
+// }
+
+// .inbox-btn {
+//   cursor: pointer;
+//   height: 100%;
+//   background: none;
+//   font-size: 2rem;
+// }
+
+// .setting-list-btn {
+//   content: "H";
+//   cursor: pointer;
+//   width: 32px;
+//   height: 32px;
+//   border: 1px solid transparent;
+//   background-color: burlywood;
+//   border-radius: 50%;
+// }

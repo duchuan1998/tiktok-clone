@@ -1,26 +1,53 @@
 import { React, useEffect, useState } from "react";
 import classNames from "classnames/bind";
-import Tippy from "@tippyjs/react/headless";
+import Tippy, { tippy } from "@tippyjs/react/headless";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
+  faEarthAsia,
+  faEllipsisVertical,
   faMagnifyingGlass,
+  faMoon,
   faPlus,
   faSpinner,
   faXmarkCircle,
 } from "@fortawesome/free-solid-svg-icons";
-import { faMessage } from "@fortawesome/free-regular-svg-icons";
+import {
+  faCirclePlay,
+  faMessage,
+  faQuestionCircle,
+} from "@fortawesome/free-regular-svg-icons";
 
 import styles from "./Header.module.scss";
 import assets from "../../../../assets";
 import { Wrapper as PopperWrapper } from "../../../Popper";
 import AccountItem from "../../../AccountItem";
 import Button from "../../../Button";
+import Menu from "../../../Popper/Menu";
 
 const cx = classNames.bind(styles);
 
 function Header() {
   const [search, setSearch] = useState("");
   const [accounts, setAccounts] = useState([]);
+
+  const menuItems = [
+    {
+      title: "Creator tools",
+      icon: faCirclePlay,
+    },
+    {
+      title: "English",
+      icon: faEarthAsia,
+    },
+    {
+      title: "Feedback and help",
+      icon: faQuestionCircle,
+    },
+    {
+      title: "Dark mode",
+      icon: faMoon,
+    },
+  ];
 
   useEffect(() => {
     setTimeout(() => {
@@ -79,6 +106,12 @@ function Header() {
           <Button primary medium>
             Log in
           </Button>
+
+          <Menu data={menuItems}>
+            <button className={cx("more-btn")}>
+              <FontAwesomeIcon icon={faEllipsisVertical} />
+            </button>
+          </Menu>
           {/* <button className={cx("upload-btn")}>
             <FontAwesomeIcon className={cx("fa-plus")} icon={faPlus} />
             Upload

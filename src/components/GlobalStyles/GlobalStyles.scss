@@ -32,16 +32,10 @@ input,
 [tabindex] {
   outline: none;
   border: none;
-
-  &:focus-within {
-    border: none;
-    outline: none;
-  }
 }
 
-button {
+button:focus-within {
   outline: none;
-  border: none;
 }
 
 a,
