@@ -1,19 +1,16 @@
-import { React, useEffect, useState } from "react";
+import { React, useState } from "react";
 import classNames from "classnames/bind";
-import Tippy, { tippy } from "@tippyjs/react/headless";
+import Tippy from "@tippyjs/react/headless";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faEarthAsia,
   faEllipsisVertical,
   faMagnifyingGlass,
   faMoon,
-  faPlus,
-  faSpinner,
   faXmarkCircle,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faCirclePlay,
-  faMessage,
   faQuestionCircle,
 } from "@fortawesome/free-regular-svg-icons";
 
@@ -26,34 +23,46 @@ import Menu from "../../../Popper/Menu";
 
 const cx = classNames.bind(styles);
 
+const menuItems = [
+  {
+    title: "Creator tools",
+    icon: faCirclePlay,
+  },
+  {
+    title: "English",
+    icon: faEarthAsia,
+    children: {
+      title: "Language",
+      data: [
+        {
+          title: "Vietnamese",
+          code: "vi",
+        },
+        {
+          title: "English",
+          code: "en",
+        },
+      ],
+    },
+  },
+  {
+    title: "Feedback and help",
+    icon: faQuestionCircle,
+    to: "https://www.tiktok.com/feedback",
+  },
+  {
+    title: "Dark mode",
+    icon: faMoon,
+  },
+];
+
 function Header() {
   const [search, setSearch] = useState("");
   const [accounts, setAccounts] = useState([]);
 
-  const menuItems = [
-    {
-      title: "Creator tools",
-      icon: faCirclePlay,
-    },
-    {
-      title: "English",
-      icon: faEarthAsia,
-    },
-    {
-      title: "Feedback and help",
-      icon: faQuestionCircle,
-    },
-    {
-      title: "Dark mode",
-      icon: faMoon,
-    },
-  ];
-
-  useEffect(() => {
-    setTimeout(() => {
-      setAccounts([]);
-    }, 0);
-  });
+  const handleMenuChange = (menuItem) => {
+    console.log(menuItem);
+  };
 
   return (
     <header className={cx("wrapper")}>
@@ -107,7 +116,7 @@ function Header() {
             Log in
           </Button>
 
-          <Menu data={menuItems}>
+          <Menu items={menuItems} onChange={handleMenuChange}>
             <button className={cx("more-btn")}>
               <FontAwesomeIcon icon={faEllipsisVertical} />
             </button>
