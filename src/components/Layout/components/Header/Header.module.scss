@@ -104,11 +104,30 @@
 }
 
 .actions {
-  width: 220px;
+  padding: 0 16px;
+  width: 168px;
   height: 36px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+
+  &.logged-in {
+    padding: 0;
+    width: 220px;
+  }
+  .upload-btn {
+    color: var(--black);
+    border-color: rgba(22, 24, 35, 0.06);
+    font-weight: 500;
+
+    &:hover {
+      background-color: rgba(22, 24, 35, 0.03);
+    }
+  }
+
+  .inbox-popper {
+    background-color: rgba(84, 84, 84, 0.92);
+  }
 }
 
 .more-btn {
@@ -119,37 +138,26 @@
   margin-left: 24px;
 }
 
-// .upload-btn {
-//   height: 100%;
-//   border: 1px solid rgba(22, 24, 35, 0.06);
-//   background: none;
-//   cursor: pointer;
-//   font-size: 1.8rem;
-//   font-weight: 500;
-//   padding: 0 16px;
+//currentuser
+.inbox-btn {
+  cursor: pointer;
+  height: 100%;
+  background: none;
+  font-size: 2rem;
+}
 
-//   .fa-plus {
-//     margin-right: 8px;
-//   }
+.inbox-popper {
+  font-size: 1.6rem;
+  font-weight: 600;
+  padding: 6px;
+  color: var(--white);
+}
 
-//   &:hover {
-//     background-color: rgba(22, 24, 35, 0.03);
-//   }
-// }
-
-// .inbox-btn {
-//   cursor: pointer;
-//   height: 100%;
-//   background: none;
-//   font-size: 2rem;
-// }
-
-// .setting-list-btn {
-//   content: "H";
-//   cursor: pointer;
-//   width: 32px;
-//   height: 32px;
-//   border: 1px solid transparent;
-//   background-color: burlywood;
-//   border-radius: 50%;
-// }
+.setting-list-btn {
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  border: 1px solid transparent;
+  background-color: burlywood;
+  border-radius: 50%;
+}
