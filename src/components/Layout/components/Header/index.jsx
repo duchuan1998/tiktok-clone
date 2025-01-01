@@ -6,11 +6,8 @@ import {
   faArrowRightToBracket,
   faCoins,
   faEarthAsia,
-  faEllipsisVertical,
   faGear,
   faMagnifyingGlass,
-  faPlus,
-  faXmarkCircle,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faCirclePlay,
@@ -26,6 +23,7 @@ import { Wrapper as PopperWrapper } from "../../../Popper";
 import AccountItem from "../../../AccountItem";
 import Button from "../../../Button";
 import Menu from "../../../Popper/Menu";
+import { InboxIcon, MoreIcon, PlusIcon, SearchIcon } from "../../../Icons";
 
 const cx = classNames.bind(styles);
 
@@ -127,7 +125,7 @@ function Header() {
 
             {search && (
               <button className={cx("clear-btn")} onClick={() => setSearch("")}>
-                <FontAwesomeIcon icon={faXmarkCircle} />
+                <SearchIcon />
               </button>
             )}
 
@@ -154,7 +152,7 @@ function Header() {
                 className={cx("upload-btn")}
                 outline
                 medium
-                lefticon={<FontAwesomeIcon icon={faPlus} />}
+                lefticon={<PlusIcon />}
               >
                 Upload
               </Button>
@@ -171,10 +169,7 @@ function Header() {
                   )}
                 >
                   <button className={cx("inbox-btn")}>
-                    <FontAwesomeIcon
-                      className={cx("fa-message")}
-                      icon={faMessage}
-                    />
+                    <InboxIcon />
                   </button>
                 </Tippy>
               </div>
@@ -195,7 +190,7 @@ function Header() {
               <button className={cx("setting-list-btn")}>H</button>
             ) : (
               <button className={cx("more-btn")}>
-                <FontAwesomeIcon icon={faEllipsisVertical} />
+                <MoreIcon />
               </button>
             )}
           </Menu>
