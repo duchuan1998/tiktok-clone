@@ -4,43 +4,30 @@
   --search-height: 46px;
   --search-width: 500px;
 
+  display: flex;
   width: 100%;
   height: var(--default-layout-header-height, 60px);
-  box-shadow: 0px 1px 1px rgb(0 0 0 / 12%);
-  display: flex;
   justify-content: center;
+  box-shadow: 0px 1px 1px rgb(0 0 0 / 12%);
 }
 
 .inner {
-  height: 100%;
-  width: var(--default-layout-width, 100%);
   display: flex;
+  width: var(--default-layout-width, 100%);
+  height: 100%;
   justify-content: space-between;
   align-items: center;
 }
 
 .search {
+  position: relative;
+  display: flex;
   width: var(--search-width);
   height: var(--search-height);
   padding-left: 16px;
-  background-color: rgba(22, 24, 35, 0.06);
-  border-radius: var(--search-border-radious);
-  display: flex;
   border: 1px solid transparent;
-  position: relative;
-
-  input {
-    font-size: 1.6rem;
-    height: 100%;
-    color: var(--black);
-    caret-color: var(--primary);
-    flex: 1;
-    background-color: transparent;
-  }
-
-  input::placeholder {
-    color: rgba(22, 24, 35, 0.7);
-  }
+  border-radius: var(--search-border-radious);
+  background-color: rgba(22, 24, 35, 0.06);
 
   &:hover,
   &:focus-within {
@@ -62,6 +49,19 @@
     top: calc(var(--search-height) * 0.2);
     background-color: rgba(22, 24, 35, 0.12);
   }
+
+  input {
+    font-size: 1.6rem;
+    height: 100%;
+    color: var(--black);
+    caret-color: var(--primary);
+    flex: 1;
+    background-color: transparent;
+  }
+
+  input::placeholder {
+    color: rgba(22, 24, 35, 0.7);
+  }
 }
 
 .search-result {
@@ -70,9 +70,9 @@
 
 .search-title {
   padding: 5px 12px;
+  color: rgba(22, 24, 35, 0.5);
   font-size: 1.4rem;
   font-weight: 600;
-  color: rgba(22, 24, 35, 0.5);
 }
 
 .clear-btn,
@@ -89,25 +89,25 @@
   height: 100%;
   border-bottom-right-radius: var(--search-border-radious);
   border-top-right-radius: var(--search-border-radious);
-  font-size: 1.8rem;
   color: rgba(22, 24, 35, 0.34);
-
-  &.search-btn--enabled {
-    color: rgba(22, 24, 35, 0.8);
-  }
+  font-size: 1.8rem;
 
   &:hover {
     cursor: pointer;
     background-color: rgba(22, 24, 35, 0.06);
     color: rgba(22, 24, 35, 1);
   }
+
+  &.search-btn--enabled {
+    color: rgba(22, 24, 35, 0.8);
+  }
 }
 
 .actions {
-  padding: 0 16px;
+  display: flex;
   width: 168px;
   height: 36px;
-  display: flex;
+  padding: 0 16px;
   align-items: center;
   justify-content: space-between;
 
@@ -115,6 +115,11 @@
     padding: 0;
     width: 220px;
   }
+
+  .inbox-popper {
+    background-color: rgba(84, 84, 84, 0.92);
+  }
+
   .upload-btn {
     color: var(--black);
     border-color: rgba(22, 24, 35, 0.06);
@@ -124,41 +129,37 @@
       background-color: rgba(22, 24, 35, 0.03);
     }
   }
-
-  .inbox-popper {
-    background-color: rgba(84, 84, 84, 0.92);
-  }
 }
 
 .more-btn {
   display: flex;
+  margin-left: 16px;
   align-items: center;
   background: none;
-  margin-left: 16px;
   cursor: pointer;
 }
 
 //currentuser
 .inbox-btn {
   display: flex;
-  align-items: center;
-  cursor: pointer;
   height: 100%;
+  align-items: center;
   background: none;
+  cursor: pointer;
 }
 
 .inbox-popper {
-  font-size: 1.6rem;
-  font-weight: 600;
   padding: 6px;
   color: var(--white);
+  font-size: 1.6rem;
+  font-weight: 600;
 }
 
 .setting-list-btn {
-  cursor: pointer;
   width: 32px;
   height: 32px;
   border: 1px solid transparent;
-  background-color: burlywood;
   border-radius: 50%;
+  background-color: burlywood;
+  cursor: pointer;
 }

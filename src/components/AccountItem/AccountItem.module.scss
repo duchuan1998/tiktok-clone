@@ -1,8 +1,8 @@
 .wrapper {
-  cursor: pointer;
-  padding: 7px 16px;
   display: flex;
   align-items: center;
+  padding: 7px 16px;
+  cursor: pointer;
 
   &:hover {
     background-color: rgba(22, 24, 35, 0.03);
@@ -29,13 +29,13 @@
 }
 
 .check {
-  font-size: 1.2rem;
-  color: rgb(56, 217, 238);
   margin-left: 8px;
+  color: rgb(56, 217, 238);
+  font-size: 1.2rem;
 }
 
 .username {
+  color: rgba(22, 24, 35, 0.5);
   font-size: 1.4rem;
   font-weight: 400;
-  color: rgba(22, 24, 35, 0.5);
 }
